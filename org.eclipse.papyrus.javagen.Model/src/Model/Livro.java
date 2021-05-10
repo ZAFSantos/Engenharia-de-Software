@@ -6,6 +6,7 @@ package Model;
 
 public class Livro implements Publicacao {
 
+	//variáveis
 	private String Titulo;
 	private String Autor;
 	private String Editor;
@@ -13,7 +14,7 @@ public class Livro implements Publicacao {
 	private String ISBN;
 	private boolean Emprestado;
 	
-	
+	//construtor
 	public Livro(String titulo, String autor, String editor, String tipo, String iSBN) {
 		Titulo = titulo;
 		Editor = editor;
@@ -22,7 +23,8 @@ public class Livro implements Publicacao {
 		Emprestado = false;
 		Tipo = tipo;
 	}
-
+	
+	//getters e setters
 	public String getTitulo() {
 		return Titulo;
 	}
@@ -52,7 +54,7 @@ public class Livro implements Publicacao {
 		return Tipo;
 	}
 
-
+	//to String
 	@Override
 	public String toString() {
 		return "Livro [Titulo=" + Titulo + ", Autor=" + Autor + ", Editor=" + Editor + ", Tipo=" + Tipo + ", ISBN="

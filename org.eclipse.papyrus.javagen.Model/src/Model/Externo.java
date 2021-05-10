@@ -4,24 +4,55 @@
 
 package Model;
 
-/************************************************************/
-/**
- * 
- */
+import java.util.ArrayList;
+
+
 public class Externo implements Utilizadores{
-	
+
+	//variáveis
 	private String Nome;
 	private String NumeroCartao;
 	private double Coima;
 	private boolean Newsletter;
+	public ArrayList<Emprestimo> emprestimos;
 	
+	//construtor
 	public Externo(String nome, String numeroCartao) {
 		Coima = 0;
 		Nome = nome;
 		Newsletter = false;
 		NumeroCartao = numeroCartao;
+		emprestimos = new ArrayList<Emprestimo>();
 	}
-
+	public Emprestimo pesquisarEmprestimo(String p) {//insere Emprestimo
+		for (Emprestimo emp : emprestimos) {
+            if (emp.getP().getTitulo().equals(p)) {
+                return emp;
+            }
+        }
+        return null;
+	}// fim do método inserirEmprestimo
+	
+	public void inserirEmprestimo(Emprestimo e) {//imprimir Emprestimos
+    	emprestimos.add(e);
+    }// fim do método imprimirEmprestimos
+	
+	public void imprimirEmprestimos() {
+		for (Emprestimo e: emprestimos) {
+			System.out.println(e.toString());
+		}
+	}
+	
+	public Emprestimo pesquisarEmprestimo(Publicacao p) {// pesquisa emprestimos
+		for (Emprestimo emp : emprestimos) {
+            if (emp.getP().getTitulo().equals(p.getTitulo())) {
+                return emp;
+            }
+        }
+        return null;
+	}// fim do método pesquisarEmprestimo
+	
+	//getters e setters
 	public double getCoima() {
 		return Coima;
 	}
@@ -46,10 +77,11 @@ public class Externo implements Utilizadores{
 		return NumeroCartao;
 	}
 
+	//to String
 	@Override
 	public String toString() {
 		return "Externo [Nome=" + Nome + ", NumeroCartao=" + NumeroCartao + ", Coima=" + Coima + ", Newsletter="
 				+ Newsletter + "]";
 	}
 
-};
+}//fim da classe

@@ -6,18 +6,21 @@ package Model;
 
 public class ObraReferencia implements Publicacao {
 
+	//variáveis
 	private String Titulo;
 	private String Autor;
 	private String Editor;
 	private String Tipo;
-	
+
+	//construtor
 	public ObraReferencia(String titulo, String autor, String editor, String tipo) {
 		Editor = editor;
 		Autor = autor;
 		Titulo = titulo;
 		Tipo = tipo;
 	}
-
+	
+	//getters e setters
 	public String getEditor() {
 		return Editor;
 	}
@@ -50,6 +53,7 @@ public class ObraReferencia implements Publicacao {
 		Tipo = tipo;
 	}
 
+	//to String
 	@Override
 	public String toString() {
 		return "ObraReferencia [Titulo=" + Titulo + ", Autor=" + Autor + ", Editor=" + Editor + ", Tipo=" + Tipo + "]";

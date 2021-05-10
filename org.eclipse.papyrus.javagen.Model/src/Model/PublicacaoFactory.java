@@ -23,7 +23,7 @@ public class PublicacaoFactory implements PublicacaoFactoryInterface {
         
         try
         {
-            // Construct an instance of a class which implements Item
+            // Construct an instance of a class which implements Publicacao
             String orderLineType = tokenizer.nextToken();
             if (orderLineType.equals(LIVRO))
             {
@@ -50,7 +50,8 @@ public class PublicacaoFactory implements PublicacaoFactoryInterface {
         }
 	}
 
-	private Publicacao registarObraReferencia(StringTokenizer tok)throws NoSuchElementException {
+	private Publicacao registarObraReferencia(StringTokenizer tok)throws NoSuchElementException {//Este método cria as string que vão para o construtor da 
+																								 //ObraReferencia com tokenizer
 		String Titulo = tok.nextToken();
 		String Autor = tok.nextToken();
 		String Editor = tok.nextToken();
@@ -58,7 +59,8 @@ public class PublicacaoFactory implements PublicacaoFactoryInterface {
 		return new ObraReferencia(Titulo, Autor, Editor, Tipo);
 	}
 
-	private Publicacao registarPublicacaoPeriodica(StringTokenizer tok)throws NoSuchElementException {
+	private Publicacao registarPublicacaoPeriodica(StringTokenizer tok)throws NoSuchElementException {//Este método cria as string que vão para o construtor da 
+		 																							  //PublicacaoPeriodica com tokenizer
 		String Titulo = tok.nextToken();
 		String Autor = tok.nextToken();
 		String Editor = tok.nextToken();
@@ -67,7 +69,8 @@ public class PublicacaoFactory implements PublicacaoFactoryInterface {
 		return new PublicacaoPeriodica(Titulo, Autor, Editor, Tipo, DataRepublicacao);
 	}
 
-	private Publicacao registarLivro(StringTokenizer tok)throws NoSuchElementException {
+	private Publicacao registarLivro(StringTokenizer tok)throws NoSuchElementException {//Este método cria as string que vão para o construtor da 
+																						//Livro com tokenizer
 		String Titulo = tok.nextToken();
 		String Autor = tok.nextToken();
 		String Editor = tok.nextToken();
@@ -76,15 +79,4 @@ public class PublicacaoFactory implements PublicacaoFactoryInterface {
 		return new Livro(Titulo, Autor, Editor, Tipo, ISBN);
 	}
 
-	
-	public int pesquisarLivro(String l) {
-		StringTokenizer tokenizer;
-        tokenizer = new StringTokenizer(l, ",");
-		if (l.equals(LIVRO))
-		{
-			return 1;
-		}
-        System.out.println("So pode ser requisitados livros");
-		return 0;
-	}
 };

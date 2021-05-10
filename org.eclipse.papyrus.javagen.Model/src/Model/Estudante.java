@@ -4,8 +4,11 @@
 
 package Model;
 
+import java.util.ArrayList;
+
 public class Estudante implements Utilizadores {
 
+	//variáveis
 	private String Nome;
 	private String NumeroCartao;
 	private String Curso;
@@ -13,8 +16,9 @@ public class Estudante implements Utilizadores {
 	private int PrazoEntrega;
 	private double Coima;
 	private boolean Newsletter;
-
+	public ArrayList<Emprestimo> emprestimos;
 	
+	//construtor
 	public Estudante(String nome, String numeroCartao, String curso) {
 		Nome = nome;
 		Curso = curso;
@@ -23,8 +27,30 @@ public class Estudante implements Utilizadores {
 		PrazoEntrega = 0;
 		Newsletter = false;
 		NumeroCartao = numeroCartao;
+		emprestimos = new ArrayList<Emprestimo>();
 	}
-
+	
+	
+	public void inserirEmprestimo(Emprestimo e) {//insere Emprestimo
+    	emprestimos.add(e);
+    }// fim do método inserirEmprestimo
+	
+	public void imprimirEmprestimos() {//imprimir Emprestimos
+		for (Emprestimo e: emprestimos) {
+			System.out.println(e.toString());
+		}
+	}// fim do método imprimirEmprestimos
+	
+	public Emprestimo pesquisarEmprestimo(String p) {// pesquisa emprestimos
+		for (Emprestimo emp : emprestimos) {
+            if (emp.getP().getTitulo().equals(p)) {
+                return emp;
+            }
+        }
+        return null;
+	}// fim do método pesquisarEmprestimo
+	
+	//getters e setters
 	public String getCurso() {
 		return Curso;
 	}
@@ -69,6 +95,7 @@ public class Estudante implements Utilizadores {
 		return NumeroCartao;
 	}
 
+	//to String
 	@Override
 	public String toString() {
 		return "Estudante [Nome=" + Nome + ", NumeroCartao=" + NumeroCartao + ", Curso=" + Curso
@@ -76,4 +103,4 @@ public class Estudante implements Utilizadores {
 				+ ", Newsletter=" + Newsletter + "]";
 	}
 	
-};
+}//fim da classe

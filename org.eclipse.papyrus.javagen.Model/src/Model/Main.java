@@ -6,8 +6,6 @@ package Model;
 
 import java.util.Scanner;
 
-import javax.swing.JOptionPane;
-
 public class Main {
 
 	public static void main(String[] args) {
@@ -42,7 +40,7 @@ public class Main {
 				lista.imprimirUtilizadores();
 			}
 				break;
-			case 3:
+			case 3: // Registar uma Publicacão
 			{
 				System.out.println("Qual o tipo de Publicacao? L-Livro, PP-PublicacaoPeriodica, OR-ObraReferencia");
 				String r = sc.next();
@@ -56,11 +54,12 @@ public class Main {
 				break;
 			case 5: // Requisitar Emprestimo
 			{
-				System.out.println("Nome do cartao do Utilizador?");
+				System.out.println("Numero do cartao do Utilizador?");
 				String r = sc.next();
+				
 				System.out.println("Nome do Livro?");
 				String r2 = sc.next();
-				lista.emprestarLivro(r, r2);
+				lista.inserirLivroUtilizador(r, r2);			
 			}
 				break;
 				default: System.out.println("Erro");
@@ -79,6 +78,7 @@ public class Main {
 				input = ("Por Favor, Insira Valores entre 1 a 5!\nEscolha uma das opções: ");
 				op = sc.nextInt();
 			}
+			sc.close();
 		}
 	}
 }

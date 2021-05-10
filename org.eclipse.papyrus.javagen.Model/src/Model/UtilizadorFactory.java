@@ -17,7 +17,8 @@ public class UtilizadorFactory implements UtilizadorFactoryInterface{
 		
 	}
 
-	private Utilizadores registarEstudante(StringTokenizer tok)throws NoSuchElementException {
+	private Utilizadores registarEstudante(StringTokenizer tok)throws NoSuchElementException {//Este método cria as string que vão para o construtor da 
+																							  //Estudante com tokenizer
 		
 		 String Nome = tok.nextToken();
 		 String NumeroCartao = tok.nextToken();
@@ -26,8 +27,8 @@ public class UtilizadorFactory implements UtilizadorFactoryInterface{
 	}
 
 
-	private Utilizadores registarStaff(StringTokenizer tok)throws NoSuchElementException {
-		
+	private Utilizadores registarStaff(StringTokenizer tok)throws NoSuchElementException {//Este método cria as string que vão para o construtor da 
+																						  //Staff com tokenizer		
 		 String Nome = tok.nextToken();	
 		 String NumeroCartao = tok.nextToken();
 		 String TString = tok.nextToken();
@@ -36,8 +37,8 @@ public class UtilizadorFactory implements UtilizadorFactoryInterface{
 	}
 
 	
-	private Utilizadores registarExterno(StringTokenizer tok)throws NoSuchElementException {
-		
+	private Utilizadores registarExterno(StringTokenizer tok)throws NoSuchElementException {//Este método cria as string que vão para o construtor da 
+		  																					//Externo com tokenizer
 		String Nome = tok.nextToken();
 		String NumeroCartao = tok.nextToken();
 		
@@ -52,7 +53,7 @@ public class UtilizadorFactory implements UtilizadorFactoryInterface{
         
         try
         {
-            // Construct an instance of a class which implements Item
+            // Construct an instance of a class which implements Utilizador
             String orderLineType = tokenizer.nextToken();
             if (orderLineType.equals(ESTUDANTE))
             {
@@ -79,4 +80,4 @@ public class UtilizadorFactory implements UtilizadorFactoryInterface{
         }
 		
 	}
-};
+}//fim da classe

@@ -5,7 +5,6 @@
 package Model;
 
 import java.util.ArrayList;
-import java.util.StringTokenizer;
 import Model.Livro;
 
 
@@ -13,8 +12,7 @@ public class GerirBiblioteca {
 
 	private ArrayList<Utilizadores> utilizadores;
 	private ArrayList<Publicacao> publicacoes;
-
-
+	
     public GerirBiblioteca()
     {
     	utilizadores = new ArrayList<>();
@@ -47,7 +45,16 @@ public class GerirBiblioteca {
     	}
     }
     
-    public Utilizadores pesquisarUtilizadores(String num) {
+    public boolean pesquisarUtilizadores(String num) {
+    	for (Utilizadores u : utilizadores) {
+			if (num.equals(u.getNumeroCartao())) {
+				return true;
+			}
+		}
+		return false;
+    }
+    
+    public Utilizadores pesquisarUtilizadores2(String num) {
     	for (Utilizadores u : utilizadores) {
 			if (num.equals(u.getNumeroCartao())) {
 				return u;
@@ -69,23 +76,43 @@ public class GerirBiblioteca {
     	}
     }
     
-    public Publicacao pesquisarPublicacoes(String titulo) {
-    	StringTokenizer tokenizer;
-        tokenizer = new StringTokenizer(titulo, ",");
+    public boolean pesquisarPublicacoes(String titulo) {
     	for (Publicacao p : publicacoes) {
-			if (tokenizer.equals(p)) {
+			if (titulo.equals(p.getTitulo())) {
+				return true;
+			}
+		}
+		return false;
+    }
+    
+    public Publicacao pesquisarPublicacoes2(String titulo) {
+    	for (Publicacao p : publicacoes) {
+			if (titulo.equals(p.getTitulo())) {
 				return p;
 			}
 		}
 		return null;
     }
     
-    public void emprestarLivro(String u, String l) {
-    	Publicacao p = pesquisarPublicacoes(l);
-    	if(p instanceof Livro) {
-    		Utilizadores util = pesquisarUtilizadores(u);
+    public void inserirLivroUtilizador(String u, String l) {
+    	Publicacao p = pesquisarPublicacoes2(l);
+    	Utilizadores util = pesquisarUtilizadores2(u);
+    	if (p instanceof Livro) {
+    		Emprestimo emp = new Emprestimo(util, p);
+            util.inserirEmprestimo(emp);
     	}
-    		
     }
-
-};
+    
+    public boolean pesquisarLivrosEmprestados(String l, String u) {
+    
+    	Utilizadores util = pesquisarUtilizadores2(u);
+    	if (util!=null) 
+    		{Emprestimo emp=util.pesquisarEmprestimo(l);
+    		if (emp!=null)
+			return true;	
+    		else return false;
+			
+    		}
+    	return false;
+    }
+}

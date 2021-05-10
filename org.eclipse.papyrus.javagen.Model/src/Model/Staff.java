@@ -3,23 +3,50 @@
 // --------------------------------------------------------
 
 package Model;
+
+import java.util.ArrayList;
+
 public class Staff implements Utilizadores{
-	
+
+	//variáveis
 	private String Nome;
 	private String NumeroCartao;
 	private int Tipo;
 	private int NumeroEmprestimos;
 	private int PrazoEntrega;
 	private boolean Newsletter;
+	public ArrayList<Emprestimo> emprestimos;
 	
+	//construtor
 	public Staff(String nome, String numeroCartao, int tipo) {
 		PrazoEntrega = 0;
 		Nome = nome;
 		Newsletter = false;
 		NumeroCartao = numeroCartao;
 		Tipo = tipo;
+		emprestimos = new ArrayList<Emprestimo>();
 	}
 
+	public void inserirEmprestimo(Emprestimo e) {//insere Emprestimo
+    	emprestimos.add(e);
+    }// fim do método inserirEmprestimo
+	
+	public void imprimirEmprestimos() {//imprimir Emprestimos
+		for (Emprestimo e: emprestimos) {
+			System.out.println(e.toString());
+		}
+	}// fim do método imprimirEmprestimos
+	
+	public Emprestimo pesquisarEmprestimo(Publicacao p) {// pesquisa emprestimos
+		for (Emprestimo emp : emprestimos) {
+            if (emp.getP().getTitulo().equals(p.getTitulo())) {
+                return emp;
+            }
+        }
+        return null;
+	}// fim do método pesquisarEmprestimo
+	
+	//getters e setters
 	public int getPrazoEntrega() {
 		return PrazoEntrega;
 	}
@@ -62,4 +89,11 @@ public class Staff implements Utilizadores{
 				+ NumeroEmprestimos + ", PrazoEntrega=" + PrazoEntrega + ", Newsletter=" + Newsletter + "]";
 	}
 
-};
+	//to String
+	@Override
+	public Emprestimo pesquisarEmprestimo(String p) {
+		
+		return null;
+	}
+
+}//fim da classe

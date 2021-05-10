@@ -10,5 +10,4 @@ package Model;
  */
 public interface PublicacaoFactoryInterface {
 	Publicacao getProxPub(String orderLine);
-	int pesquisarLivro(String l);
 };

@@ -6,12 +6,14 @@ package Model;
 
 public class PublicacaoPeriodica implements Publicacao {
 
+	//variáveis
 	private String Titulo;
 	private String Autor;
 	private String Editor;
 	private String Tipo;
 	private String DataRepublicacao;
-	
+
+	//construtor
 	public PublicacaoPeriodica(String titulo, String autor, String editor,  String tipo, String dataRepublicacao) {
 		Autor = autor;
 		Editor = editor;
@@ -19,7 +21,8 @@ public class PublicacaoPeriodica implements Publicacao {
 		Tipo = tipo;
 		DataRepublicacao = dataRepublicacao;
 	}
-
+	
+	//getters e setters
 	public String getAutor() {
 		return Autor;
 	}
@@ -40,7 +43,7 @@ public class PublicacaoPeriodica implements Publicacao {
 		return DataRepublicacao;
 	}
 
-
+	//to String
 	@Override
 	public String toString() {
 		return "PublicacaoPeriodica [Titulo=" + Titulo + ", Autor=" + Autor + ", Editor=" + Editor + ", Tipo=" + Tipo
