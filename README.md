@@ -9,7 +9,7 @@ ESTUDANTE --- E,Ze,103,Informatica
 
 STAFF --- S,Jorge,160,1
 
-EXTERIOR --- EXT,Pedro,593
+EXTERIOR --- EXT,Pedro,445
 
 LIVRO --- L,HarryPotter,JKRowling,BAss,Aventura,1234
 
