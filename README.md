@@ -23,5 +23,4 @@ OBRA REFERÊNCIA --- OR,ORatinho,Joao,Priberam,Dicionario
 Colocar as novas versões neste Repositório. 
 
 
-
-40103 - 40160 - 40593 - 40445
+José Santos 40103 | Jorge Sousa 40160 | João Cerqueira  40593 | Pedro Teixeira 40445
