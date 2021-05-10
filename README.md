@@ -15,7 +15,7 @@ LIVRO --- L,HarryPotter,JKRowling,BAss,Aventura,1234
 
 PUBLICACÃO PERIODICA --- PP,Revista,DesignPatterns,GangOfGour,GradyBooch,09-05-2021
 
-OBRA REFERÊNCIA --- OR,ORatinho,Joao,Priberam,Dicionario
+OBRA REFERÊNCIA --- OR,ORatinho,JoaoNabo,Priberam,Dicionario
 
 -----------------------------------------------
 
