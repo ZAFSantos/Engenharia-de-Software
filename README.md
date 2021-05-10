@@ -1,21 +1,21 @@
 # Engenharia-de-Software
 Uso do Github para o Trabalho de Engenharia de Software
 
-Usar estes dados a testar o Main():
+Usar os seguintes dados a testar o Main():
 
 -----------------------------------------------
 
-E,Ze,103,Informatica
+ESTUDANTE --- E,Ze,103,Informatica
 
-S,Jorge,160,1
+STAFF --- S,Jorge,160,1
 
-EXT,Pedro,593
+EXTERIOR --- EXT,Pedro,593
 
-L,HarryPotter,JKRowling,BAss,Aventura,1234
+LIVRO --- L,HarryPotter,JKRowling,BAss,Aventura,1234
 
-PP,Revista,JorgeChora,TemosTempo,Paciencia,09-05-2021
+PublicacãoPeriodica --- PP,Revista,JorgeChora,TemosTempo,Paciencia,09-05-2021
 
-OR,Dicionario,Ze,Genius,Tudo
+ObraReferência --- OR,Dicionario,Ze,Genius,Tudo
 
 -----------------------------------------------
 
