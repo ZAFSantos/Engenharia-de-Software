@@ -20,7 +20,7 @@ OBRA REFERÊNCIA --- OR,Dicionario,Ze,Genius,Tudo
 -----------------------------------------------
 
 
-A favor de meter as novas versões neste Repositório. 
+Meter as novas versões neste Repositório. 
 
 
 
