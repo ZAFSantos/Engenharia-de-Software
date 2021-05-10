@@ -13,9 +13,9 @@ EXTERIOR --- EXT,Pedro,593
 
 LIVRO --- L,HarryPotter,JKRowling,BAss,Aventura,1234
 
-PublicacãoPeriodica --- PP,Revista,JorgeChora,TemosTempo,Paciencia,09-05-2021
+PUBLICACÃO PERIODICA --- PP,Revista,JorgeChora,TemosTempo,Paciencia,09-05-2021
 
-ObraReferência --- OR,Dicionario,Ze,Genius,Tudo
+OBRA REFERÊNCIA --- OR,Dicionario,Ze,Genius,Tudo
 
 -----------------------------------------------
 
